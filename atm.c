@@ -33,7 +33,7 @@ void display_notes(unsigned short int money, unsigned int note_count)
   {
     no_of_notes = note_count & 0xf0000000;
     no_of_notes = no_of_notes >> 28;
-    printf("%u %s of Rs %u\n", no_of_notes, no_of_notes < 2 ? "note" : "notes", denominations[index]);
+    no_of_notes &&printf("%u %s of Rs %u\n", no_of_notes, no_of_notes < 2 ? "note" : "notes", denominations[index]);
     note_count = note_count << 4;
   }
   printf("\n");
