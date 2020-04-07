@@ -8,6 +8,11 @@ unsigned int get_money(unsigned short int money)
   unsigned short int remaining_money = money;
   unsigned int no_of_notes = 0;
 
+  if (remaining_money > 31999)
+  {
+    return note_count;
+  }
+
   for (int index = 0; index < 8; index++)
   {
     note_count = note_count << 4;
