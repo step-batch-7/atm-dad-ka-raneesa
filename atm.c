@@ -13,12 +13,12 @@ cash_count get_money(cash money)
     return note_count;
   }
 
-  for (int index = 0; index < 8; index++)
+  EIGHT_TIMES
   {
     note_count = note_count << 4;
-    no_of_notes = remaining_money / denominations[index];
+    no_of_notes = remaining_money / denominations[i];
     note_count = note_count | no_of_notes;
-    remaining_money = remaining_money % denominations[index];
+    remaining_money = remaining_money % denominations[i];
   }
   return note_count;
 }
@@ -29,11 +29,11 @@ void display_notes(cash money, cash_count note_count)
   printf("Denomination count: \n");
   printf("Amount: %u\n", money);
   cash_count no_of_notes = INITIAL_NOTE_COUNT;
-  for (int index = 0; index < 8; index++)
+  EIGHT_TIMES
   {
     no_of_notes = note_count & INITIAL_POSITION;
     no_of_notes = no_of_notes >> 28;
-    no_of_notes &&printf("%u %s of Rs %u\n", no_of_notes, no_of_notes < 2 ? "note" : "notes", denominations[index]);
+    no_of_notes &&printf("%u %s of Rs %u\n", no_of_notes, no_of_notes < 2 ? "note" : "notes", denominations[i]);
     note_count = note_count << 4;
   }
   printf("\n");
