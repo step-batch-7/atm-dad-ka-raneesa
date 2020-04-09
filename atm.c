@@ -4,9 +4,9 @@
 unsigned int get_money(unsigned short int money)
 {
   unsigned int note_count = INITIAL_NOTE_COUNT;
-  unsigned short int denominations[8] = {2000, 500, 100, 50, 20, 10, 5, 1};
+  unsigned short int denominations[8] = DENOMINATIONS_LIST;
   unsigned short int remaining_money = money;
-  unsigned int no_of_notes = 0;
+  unsigned int no_of_notes = INITIAL_NOTE_COUNT;
 
   if (remaining_money > LIMIT)
   {
@@ -25,10 +25,10 @@ unsigned int get_money(unsigned short int money)
 
 void display_notes(unsigned short int money, unsigned int note_count)
 {
-  unsigned short int denominations[8] = {2000, 500, 100, 50, 20, 10, 5, 1};
+  unsigned short int denominations[8] = DENOMINATIONS_LIST;
   printf("Denomination count: \n");
   printf("Amount: %u\n", money);
-  unsigned int no_of_notes = 0;
+  unsigned int no_of_notes = INITIAL_NOTE_COUNT;
   for (int index = 0; index < 8; index++)
   {
     no_of_notes = note_count & INITIAL_POSITION;
