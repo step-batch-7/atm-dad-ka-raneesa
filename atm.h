@@ -18,5 +18,11 @@
    2590 0x11012000
   31999 0xf3412014
 */
+#include <stdio.h>
+
+#define LIMIT 31999
+#define INITIAL_NOTE_COUNT 0x00000000
+#define INITIAL_POSITION 0xf0000000
+
 unsigned int get_money(unsigned short int);
 void display_notes(unsigned short int, unsigned int);
