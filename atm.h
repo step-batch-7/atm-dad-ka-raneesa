@@ -25,5 +25,8 @@
 #define INITIAL_POSITION 0xf0000000
 #define DENOMINATIONS_LIST {2000, 500, 100, 50, 20, 10, 5, 1}
 
-unsigned int get_money(unsigned short int);
+typedef unsigned int cash_count;
+typedef unsigned short int cash;
+
+cash_count get_money(unsigned short int);
 void display_notes(unsigned short int, unsigned int);

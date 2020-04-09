@@ -1,12 +1,12 @@
 #include <stdio.h>
 #include "atm.h"
 
-unsigned int get_money(unsigned short int money)
+cash_count get_money(cash money)
 {
-  unsigned int note_count = INITIAL_NOTE_COUNT;
-  unsigned short int denominations[8] = DENOMINATIONS_LIST;
-  unsigned short int remaining_money = money;
-  unsigned int no_of_notes = INITIAL_NOTE_COUNT;
+  cash_count note_count = INITIAL_NOTE_COUNT;
+  cash denominations[8] = DENOMINATIONS_LIST;
+  cash remaining_money = money;
+  cash_count no_of_notes = INITIAL_NOTE_COUNT;
 
   if (remaining_money > LIMIT)
   {
@@ -23,12 +23,12 @@ unsigned int get_money(unsigned short int money)
   return note_count;
 }
 
-void display_notes(unsigned short int money, unsigned int note_count)
+void display_notes(cash money, cash_count note_count)
 {
-  unsigned short int denominations[8] = DENOMINATIONS_LIST;
+  cash denominations[8] = DENOMINATIONS_LIST;
   printf("Denomination count: \n");
   printf("Amount: %u\n", money);
-  unsigned int no_of_notes = INITIAL_NOTE_COUNT;
+  cash_count no_of_notes = INITIAL_NOTE_COUNT;
   for (int index = 0; index < 8; index++)
   {
     no_of_notes = note_count & INITIAL_POSITION;
